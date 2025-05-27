@@ -81,7 +81,6 @@ public class Teste {
 
                     }
                     break;
-                
                 case 8:
                     if(pilha.pilhaVazia()){
                         System.out.println("Pilha vazia");
