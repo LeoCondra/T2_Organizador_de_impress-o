@@ -1,7 +1,7 @@
 # T2_Organizador_de_impress-o
 Instituto Mauá de Tecnologia 2025
 
-Bernado
+Bernardo Bertuzzi Ghioldi - RA: 23.00473-8
 Gabriel Tembra Gomes de Oliveira - RA:22.10051-2 
 Gustavo Fernandes Arantes Maluta - RA:23.10050-8 
 Leonardo Condrasisen - RA:23.01270-6 
