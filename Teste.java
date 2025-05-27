@@ -9,7 +9,6 @@ public class Teste {
         String nomeA;
         String nomeU;
         
-
         while(stat!=0){
             System.out.println("1-Adcionar documento\n2-Imprimir documento\n3-Procurar Documento\n0- Sair\n");
             stat=scanner.nextInt();
