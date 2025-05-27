@@ -5,12 +5,15 @@ public class Teste {
         int stat = -1;
         Scanner scanner=new Scanner(System.in);
         Fila fila=new Fila();
+        Pilha pilha=new Pilha();
+
+        Documento doc;
         
         String nomeA;
         String nomeU;
         
         while(stat!=0){
-            System.out.println("1-Adcionar documento\n2-Imprimir documento\n3-Procurar Documento\n0- Sair\n");
+            System.out.println("\n1-Adcionar documento\n2-Imprimir documento\n3-Procurar Documento\n4-Adcionar documento a pilha de prioridade\n5-Imprimir documento pilha de prioriade\n6-Procurar documento na pilha de prioridade\n0- Sair\n");
             stat=scanner.nextInt();
             scanner.nextLine();
 
@@ -27,7 +30,7 @@ public class Teste {
                     nomeA = scanner.nextLine();
                     System.out.println("Insira nome do Usuario:");
                     nomeU= scanner.nextLine();
-                    Documento doc=new Documento(nomeU, nomeA);
+                    doc=new Documento(nomeU, nomeA);
                     fila.enfileira(doc);
                     break;
                 case 2:
@@ -44,6 +47,33 @@ public class Teste {
                     System.out.println("Qual o nome do arquivo que voce quer procurar?");
                     fila.acharArquivo(scanner.nextLine());
                     break;
+                case 4:
+                    if(pilha.pilhaCheia()){
+                        System.out.println("Pilha de prioridade cheia");
+                        break;
+                    }
+                    System.out.println("Insira o nome do arquivo:");
+                    nomeA = scanner.nextLine();
+                    System.out.println("Insira nome do Usuario:");
+                    nomeU= scanner.nextLine();
+                    doc=new Documento(nomeU, nomeA);
+                    pilha.push(doc);
+                    break;
+                case 5:
+                    if(pilha.pilhaVazia()){
+                            System.out.println("Nao ha documentos para imprimir na pilha de prioridade");
+                    }else{
+                        doc = pilha.pop();
+                        doc.marcarFim(); 
+                        System.out.println(doc);
+                        System.out.println("O documento da pilha de prioridade foi impresso");
+                    }  
+                    break;
+                case 6:
+                    System.out.println("Qual o nome do arquivo que voce quer procurar?");
+                    pilha.acharArquivo(scanner.nextLine());
+                    break;
+
                 default:
                     System.out.println("Numero Invalido");
                     break;
