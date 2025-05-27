@@ -16,7 +16,7 @@ public class Fila {
     public boolean filaCheia() {
         return ocupacao == dados.length;
     }
-    private int proximaPosicao (int posicao) {//define o comportamento circular
+    public int proximaPosicao (int posicao) {//define o comportamento circular
         return (posicao + 1) % dados.length;
     }
     public void enfileira (Documento e) {
@@ -34,20 +34,20 @@ public class Fila {
     }
 
     public void acharArquivo(String s){
-    boolean encontrado = false;
-    int posicaoLogica = 1;
+        boolean encontrado = false;
+        int posicaoLogica = 1;
 
-    for (int i = primeiro, cont = 0; cont < ocupacao; i = proximaPosicao(i), cont++, posicaoLogica++) {
-        if (dados[i].getNomeA().equals(s)) {
-            System.out.println("Ele esta na posicao " + posicaoLogica + " da fila");
-            encontrado = true;
+        for (int i = primeiro, cont = 0; cont < ocupacao; i = proximaPosicao(i), cont++, posicaoLogica++) {
+            if (dados[i].getNomeA().equals(s)) {
+                System.out.println("Ele esta na posicao " + posicaoLogica + " da fila");
+                encontrado = true;
+            }
+        }
+
+        if (!encontrado) {
+            System.out.println("O arquivo não foi encontrado");
         }
     }
-
-    if (!encontrado) {
-        System.out.println("O arquivo não foi encontrado");
-    }
-}
 
 
     @Override
@@ -55,7 +55,7 @@ public class Fila {
         if (filaVazia()) return "fila vazia";
         String s = "";
         for (int i=primeiro, cont=0; cont<ocupacao; i=proximaPosicao(i), cont++) {
-            s = s + dados[i] + " ";
+            s = s + dados[i] + "\n";
         }
         return s;
     }

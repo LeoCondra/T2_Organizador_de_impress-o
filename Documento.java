@@ -50,6 +50,15 @@ public class Documento {
         return nomeA;
     }
 
+    public String tempoPassado() {
+        Calendar agora = GregorianCalendar.getInstance();
+        long millisInicio = horarioInicio.getTimeInMillis();
+        long millisAgora = agora.getTimeInMillis();
+        long segundos = (millisAgora - millisInicio) / 1000;
+        return segundos + "";
+    }
+
+
     @Override
     public String toString() {
         String duracao = horarioFim != null ? getSegundosDecorridos() + "s" : "pendente";

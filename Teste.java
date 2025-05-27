@@ -13,7 +13,7 @@ public class Teste {
         String nomeU;
         
         while(stat!=0){
-            System.out.println("\n1-Adcionar documento\n2-Imprimir documento\n3-Procurar Documento\n4-Adcionar documento a pilha de prioridade\n5-Imprimir documento pilha de prioriade\n6-Procurar documento na pilha de prioridade\n0- Sair\n");
+            System.out.println("\n1-Adcionar documento\n2-Imprimir documento\n3-Procurar Documento\n4-Adcionar documento a pilha de prioridade\n5-Imprimir documento pilha de prioriade\n6-Procurar documento na pilha de prioridade\n7-Mostrar a fila de Impressao\n8-Mostrar a pilha de impressao\n0- Sair\n");
             stat=scanner.nextInt();
             scanner.nextLine();
 
@@ -73,7 +73,22 @@ public class Teste {
                     System.out.println("Qual o nome do arquivo que voce quer procurar?");
                     pilha.acharArquivo(scanner.nextLine());
                     break;
+                case 7:
+                    if(fila.filaVazia()){
+                        System.out.println("Fila vazia");
+                    }else{
+                        System.out.println(fila);
 
+                    }
+                    break;
+                
+                case 8:
+                    if(pilha.pilhaVazia()){
+                        System.out.println("Pilha vazia");
+                    }else{
+                        System.out.println(pilha);
+                    }
+                    break;
                 default:
                     System.out.println("Numero Invalido");
                     break;

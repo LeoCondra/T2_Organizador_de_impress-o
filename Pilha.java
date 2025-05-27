@@ -36,19 +36,21 @@ public class Pilha {
     }
 
     public void acharArquivo(String s) {
-    boolean encontrado = false;
-    for (int i = topo - 1; i >= 0; i--) {
-        if (dados[i].getNomeA().equals(s)) {
-            int posicaoAPartirDoTopo = topo - i;
-            System.out.println("Arquivo encontrado na posição " + posicaoAPartirDoTopo + " a partir do topo da pilha.");
-            encontrado = true;
-            break;
+        boolean encontrado = false;
+        for (int i = topo - 1; i >= 0; i--) {
+            if (dados[i].getNomeA().equals(s)) {
+                int posicaoAPartirDoTopo = topo - i;
+                System.out.println("Arquivo encontrado na posição " + posicaoAPartirDoTopo + " a partir do topo da pilha.");
+                encontrado = true;
+                System.out.println("O arquivo foi adcionado a pilha as: "+dados[i].getHorarioInicio()+" e ja esta esperando a "+dados[i].tempoPassado()+" segundos");
+            
+
+            }
+        }
+        if (!encontrado) {
+            System.out.println("Arquivo não encontrado na pilha.");
         }
     }
-    if (!encontrado) {
-        System.out.println("Arquivo não encontrado na pilha.");
-    }
-}
 
 
     @Override
