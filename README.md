@@ -7,3 +7,6 @@ Gustavo Fernandes Arantes Maluta - RA:23.10050-8
 Leonardo Condrasisen - RA:23.01270-6 
 João Carlos de Oliveira Serrano - RA:23.10205-5 
 João Yuuki Shimbori Lopes - RA:23.01339-7
+
+
+O arquivo teste.txt é uma sequencia de entradas que demonstra todos os comandos presentes na aplicação.

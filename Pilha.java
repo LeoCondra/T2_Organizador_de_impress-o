@@ -5,7 +5,7 @@ public class Pilha {
     public Pilha() {
         this(10);
     }
-
+    
     public Pilha(int capacidade) {
         topo = 0;
         dados = new Documento[capacidade];
@@ -40,15 +40,15 @@ public class Pilha {
         for (int i = topo - 1; i >= 0; i--) {
             if (dados[i].getNomeA().equals(s)) {
                 int posicaoAPartirDoTopo = topo - i;
-                System.out.println("Arquivo encontrado na posição " + posicaoAPartirDoTopo + " a partir do topo da pilha.");
+                System.out.println("\nArquivo encontrado na posição " + posicaoAPartirDoTopo + " a partir do topo da pilha.");
                 encontrado = true;
-                System.out.println("O arquivo foi adcionado a pilha as: "+dados[i].getHorarioInicio()+" e ja esta esperando a "+dados[i].tempoPassado()+" segundos");
+                System.out.println("\nO arquivo foi adcionado a pilha as: "+dados[i].getHorarioInicio()+" e ja esta esperando a "+dados[i].tempoPassado()+" segundos");
             
 
             }
         }
         if (!encontrado) {
-            System.out.println("Arquivo não encontrado na pilha.");
+            System.out.println("\nArquivo não encontrado na pilha.");
         }
     }
 

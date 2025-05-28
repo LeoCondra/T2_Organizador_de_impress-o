@@ -11,71 +11,73 @@ public class Teste {
         
         String nomeA;
         String nomeU;
+
+        System.out.println("\n<T2- Ordenador de Impressao>\n");
         
         while(stat!=0){
-            System.out.println("\n1-Adcionar documento\n2-Imprimir documento\n3-Procurar Documento\n4-Adcionar documento a pilha de prioridade\n5-Imprimir documento pilha de prioriade\n6-Procurar documento na pilha de prioridade\n7-Mostrar a fila de Impressao\n8-Mostrar a pilha de impressao\n0- Sair\n");
+            System.out.println("\nDigite os numeros no terminal que correspodem ao comando desejado \n<1> - Adcionar documento\n<2> - Imprimir documento\n <3> - Procurar Documento\n<4> - Adcionar documento a pilha de prioridade\n<5> - Imprimir documento pilha de prioriade\n<6> - Procurar documento na pilha de prioridade\n<7> - Mostrar a fila de Impressao\n<8> - Mostrar a pilha de impressao\n<0> - Sair\n");
             stat=scanner.nextInt();
             scanner.nextLine();
 
             switch (stat) {
                 case 0:
-                    System.out.println("Ate logo");
+                    System.out.println("\nAte logo");
                     break;
                 case 1:
                     if(fila.filaCheia()){
-                        System.out.println("A fila esta cheia, volte novamente mais tarde :D");
+                        System.out.println("\nA fila esta cheia, volte novamente mais tarde :D");
                         break;
                     }
-                    System.out.println("Insira o nome do arquivo:");
+                    System.out.println("\nInsira o nome do arquivo:");
                     nomeA = scanner.nextLine();
-                    System.out.println("Insira nome do Usuario:");
+                    System.out.println("\nInsira nome do Usuario:");
                     nomeU= scanner.nextLine();
                     doc=new Documento(nomeU, nomeA);
                     fila.enfileira(doc);
                     break;
                 case 2:
                     if(fila.filaVazia()){
-                        System.out.println("Nao ha documentos para imprimir");
+                        System.out.println("\nNao ha documentos para imprimir");
                     }else{
                         doc = fila.desenfileira();
                         doc.marcarFim(); 
                         System.out.println(doc);
-                        System.out.println("O documento foi impresso");
+                        System.out.println("\nO documento foi impresso");
                     }
                     break;
                 case 3:
-                    System.out.println("Qual o nome do arquivo que voce quer procurar?");
+                    System.out.println("\nQual o nome do arquivo que voce quer procurar?");
                     fila.acharArquivo(scanner.nextLine());
                     break;
                 case 4:
                     if(pilha.pilhaCheia()){
-                        System.out.println("Pilha de prioridade cheia");
+                        System.out.println("\nPilha de prioridade cheia");
                         break;
                     }
-                    System.out.println("Insira o nome do arquivo:");
+                    System.out.println("\nInsira o nome do arquivo:");
                     nomeA = scanner.nextLine();
-                    System.out.println("Insira nome do Usuario:");
+                    System.out.println("\nInsira nome do Usuario:");
                     nomeU= scanner.nextLine();
                     doc=new Documento(nomeU, nomeA);
                     pilha.push(doc);
                     break;
                 case 5:
                     if(pilha.pilhaVazia()){
-                            System.out.println("Nao ha documentos para imprimir na pilha de prioridade");
+                            System.out.println("\nNao ha documentos para imprimir na pilha de prioridade");
                     }else{
                         doc = pilha.pop();
                         doc.marcarFim(); 
                         System.out.println(doc);
-                        System.out.println("O documento da pilha de prioridade foi impresso");
+                        System.out.println("\nO documento da pilha de prioridade foi impresso");
                     }  
                     break;
                 case 6:
-                    System.out.println("Qual o nome do arquivo que voce quer procurar?");
+                    System.out.println("\nQual o nome do arquivo que voce quer procurar?");
                     pilha.acharArquivo(scanner.nextLine());
                     break;
                 case 7:
                     if(fila.filaVazia()){
-                        System.out.println("Fila vazia");
+                        System.out.println("\nFila vazia");
                     }else{
                         System.out.println(fila);
 
@@ -83,13 +85,13 @@ public class Teste {
                     break;
                 case 8:
                     if(pilha.pilhaVazia()){
-                        System.out.println("Pilha vazia");
+                        System.out.println("\nPilha vazia");
                     }else{
                         System.out.println(pilha);
                     }
                     break;
                 default:
-                    System.out.println("Numero Invalido");
+                    System.out.println("\nNumero Invalido");
                     break;
             }
         }
